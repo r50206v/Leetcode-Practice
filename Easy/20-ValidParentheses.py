@@ -29,6 +29,37 @@ class Solution:
         else:
             return True
 
+
+'''
+Runtime: 28 ms
+Memory Usage: 13.8 MB
+09/11/2020
+'''       
+class Solution:
+    def isValid(self, s: str) -> bool:
+        mapping = {'{': '}', '[': ']', '(': ')'}
+        
+        if len(s) == 0:
+            return True
+        if len(s)%2 != 0:
+            return False
+        if s[0] in list(mapping.values()):
+            return False
+        
+        checkList = []
+        for p in s:
+            if p in list(mapping.keys()):
+                checkList.insert(0, mapping[p])
+            elif len(checkList) != 0 and p == checkList[0]:
+                checkList.pop(0)
+            else: 
+                return False
+        if len(checkList) == 0:
+            return True
+        else:
+            return False
+
+        
         
         
 # Solution

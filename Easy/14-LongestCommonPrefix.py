@@ -17,6 +17,30 @@ class Solution:
         return ''
     
     
+'''
+Runtime: 28 ms
+Memory Usage: 13.7 MB
+09/11/2020
+'''
+class Solution:
+    def longestCommonPrefix(self, strs) -> str:
+        if len(strs) == 0:
+            return ""
+        elif len(strs) == 1:
+            return strs[0]
+        
+        shortest = min(strs, key=len)
+        ans = ""
+        for i in shortest:
+            if all(x.startswith(ans + i) for x in strs):
+                ans += i
+            else:
+                break
+        return ans
+        
+
+    
+    
 # Solution
 class Solution:
     def longestCommonPrefix(self, strs) -> str:

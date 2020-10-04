@@ -16,3 +16,18 @@ class Solution:
         return pointer
     
     
+
+'''
+Runtime: 32 ms
+Memory Usage: 13.7 MB
+09/12/2020
+'''
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        ind = 0
+        while ind < len(nums):
+            if nums[ind] == val:
+                del nums[ind]
+            else:
+                ind += 1
+        return len(nums)

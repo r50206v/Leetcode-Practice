@@ -12,6 +12,23 @@ class Solution:
                     return sorted([i_index, j_index])
                 
                 
+'''
+09/11/2020
+Runtime: 56ms
+Memory Usage: 16.1 MB
+'''
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        org = {target - val: ind for ind, val in enumerate(nums)}
+        for ind, val in enumerate(nums):
+            if org.get(val) is not None:
+                if ind != org.get(val):
+                    return [ind, org[val]]
+        return []
+    
+    
+                
+                
 # Solution
 class Solution:
     def twoSum(self, nums: 'List[int]', target: 'int') -> 'List[int]':
