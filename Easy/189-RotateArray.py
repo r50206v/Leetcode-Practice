@@ -1,7 +1,23 @@
+'''
+Time Complexity: O(n)
+Space Complexity: O(1)
+'''
+class Solution:
+    def rotate(self, nums: List[int], k: int) -> None:
+        """
+        Do not return anything, modify nums in-place instead.
+        """
+        
+        if k > len(nums):
+            k = k % len(nums)
+        
+        nums[:] = nums[-k:] + nums[:-k]
+        
+
 # My Answer
 '''
-Runtime: 128 ms, faster than 19.70% of Python online submissions for Rotate Array.
-Memory Usage: 12.1 MB, less than 67.99% of Python online submissions for Rotate Array.
+Runtime: O(n)
+Memory Usage: O(1)
 '''
 class Solution(object):
     def rotate(self, nums, k):
@@ -13,6 +29,11 @@ class Solution(object):
         for i in tmp[::-1]:
             nums.insert(0, i)
 
+            
+'''
+Time Complexity: 
+Space Complexity:  
+'''
 
 
 # Solution
