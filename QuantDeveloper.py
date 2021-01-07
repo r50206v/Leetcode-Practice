@@ -661,3 +661,44 @@ class Solution:
         output = []
         backtrack(0)
         return output
+
+
+# 141. Linked List Cycle
+class Solution:
+    def hasCycle(self, head: ListNode) -> bool:
+        if not head or not head.next:
+            return False
+        
+        point1 = head
+        point2 = head.next
+        
+        while point1 or point2:
+            if point1 == point2:
+                return True
+            
+            if point1.next:
+                point1 = point1.next
+            else:
+                break
+            if point2.next and point2.next.next:
+                point2 = point2.next.next
+            else:
+                break
+            
+        return False
+    
+
+# 509. Fibonacci Number
+'''
+time: O(N)
+space: O(N)
+'''
+class Solution:
+    def fib(self, n: int) -> int:
+        arr = [0, 1]
+        if n <= 1:
+            return arr[n]
+        
+        for i in range(2, n + 1):
+            arr.append(arr[i - 1] + arr[i - 2])
+        return arr[-1]
