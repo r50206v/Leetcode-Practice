@@ -46,6 +46,8 @@ def Rand10UsingRand7():
         row = (rand7() - 1) * 7
         x = col + row
     return 1 + (x - 1) % 10
+# this method guarantees we will not generate 0
+
 
 def Rand10UsingRand7():
     v1, v2 = rand7(), rand7()
