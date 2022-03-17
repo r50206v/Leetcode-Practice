@@ -1,4 +1,3 @@
-# Write your MySQL query statement below
 WITH cte (category) AS (
     SELECT "Low Salary" FROM DUAL
     UNION 
